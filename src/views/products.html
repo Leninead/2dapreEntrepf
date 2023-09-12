@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <!-- Add your CSS links or stylesheets here if needed -->
+    <link rel="stylesheet" type="text/css" href="your-styles.css">
+</head>
+<body>
+    <h1>Products</h1>
+
+    <!-- Your product listing content goes here -->
+    <div id="product-list">
+        <!-- Example product item -->
+        <div class="product">
+            <h2>Product Name</h2>
+            <p>Price: $100</p>
+            <p>Category: Electronics</p>
+            <button onclick="viewProductDetails(productId)">View Details</button>
+            <button onclick="addToCart(productId)">Add to Cart</button>
+        </div>
+        <!-- Repeat this structure for each product in the listing -->
+    </div>
+
+    <div id="pagination-links">
+        <!-- Pagination links go here -->
+        <a href="#">Previous</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">Next</a>
+    </div>
+
+    <script>
+        // JavaScript functions for handling product actions
+        function viewProductDetails(productId) {
+            // Implement logic to view product details (e.g., open a modal)
+        }
+
+        function addToCart(productId) {
+            // Implement logic to add the product to the cart
+        }
+    </script>
+
+    <!-- Add your JavaScript links or scripts here if needed -->
+    <script src="./productsView.js"></script>
+</body>
+</html>
