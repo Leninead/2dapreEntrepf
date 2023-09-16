@@ -1,47 +1,55 @@
-// Sample cart data (replace with your actual cart data)
-const cartData = [
-    {
-        productId: 'product1',
-        productName: 'Sample Product 1',
-        price: 100,
-        quantity: 2,
-    },
-    {
-        productId: 'product2',
-        productName: 'Sample Product 2',
-        price: 50,
-        quantity: 1,
-    },
-];
+// // // Sample cart data (replace with your actual cart data)
+// // const cartData = [
+// //     {
+// //         productId: 'product1',
+// //         productName: 'Sample Product 1',
+// //         price: 100,
+// //         quantity: 2,
+// //     },
+// //     {
+// //         productId: 'product2',
+// //         productName: 'Sample Product 2',
+// //         price: 50,
+// //         quantity: 1,
+// //     },
+// // ];
 
-// Function to render the cart content
-function renderCart() {
-    const cartContent = document.getElementById('cart-content');
+// // Mock code for cartsView.js
 
-    // Clear the existing cart content
-    cartContent.innerHTML = '';
+// // Assume you have a container to display cart items
+// const cartContainer = document.getElementById('cart-container');
 
-    // Loop through the cart data and create cart items
-    cartData.forEach((product) => {
-        const cartItem = document.createElement('div');
-        cartItem.classList.add('cart-item');
+// // Function to display cart items
+// function displayCartItems(cart) {
+//   cartContainer.innerHTML = '';  // Clear the container
 
-        cartItem.innerHTML = `
-            <h2>${product.productName}</h2>
-            <p>Price: $${product.price}</p>
-            <p>Quantity: ${product.quantity}</p>
-            <button onclick="removeFromCart('${product.productId}')">Remove</button>
-        `;
+//   if (!cart || !cart.products) {
+//     cartContainer.innerHTML = '<p>No items in the cart</p>';
+//     return;
+//   }
 
-        cartContent.appendChild(cartItem);
-    });
-}
+//   cart.products.forEach((product) => {
+//     // Display each product in the cart
+//     const productItem = document.createElement('div');
+//     productItem.innerHTML = `<p>Product: ${product.productId.name}, Quantity: ${product.quantity}</p>`;
+//     cartContainer.appendChild(productItem);
+//   });
+// }
 
-// Function to remove a product from the cart
-function removeFromCart(productId) {
-    // Implement logic to remove the product from the cart
-    // You can use JavaScript to update the cartData array and call renderCart() to refresh the cart view
-}
+// // Assume you have a function to fetch cart data from the backend
+// function fetchCartData(cartId) {
+//   fetch(`/api/carts/${cartId}`)
+//     .then(response => response.json())
+//     .then(data => {
+//       if (data.status === 'success') {
+//         displayCartItems(data.cart);
+//       } else {
+//         console.error('Error fetching cart:', data.message);
+//       }
+//     })
+//     .catch(error => console.error('Error fetching cart:', error));
+// }
 
-// Call renderCart() to initially render the cart content
-renderCart();
+// // Call the function to fetch and display cart data
+// const cartId = 'your-cart-id';  // Replace with the actual cart ID
+// fetchCartData(cartId);
