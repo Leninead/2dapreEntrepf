@@ -143,24 +143,26 @@ populateProducts();
 app.use('/api', productsRouter);
 app.use('/api', cartsRouter);
 
-// Define routes for rendering views
-app.get('/products', (req, res) => {
-  // Render the products view (productsView.js)
-  res.sendFile(path.join(__dirname, 'views', 'productsView.js'));
-});
+// // Define routes for rendering views
+// app.get('/products', (req, res) => {
+//   // Render the products view (productsView.js)
+//   res.sendFile(path.join(__dirname, 'views', 'productsView.js'));
+// });
 
-app.get('/carts/:cid', (req, res) => {
-  // Render the cart view (cartsView.js)
-  res.sendFile(path.join(__dirname, 'views', 'cartsView.js'));
-});
+// app.get('/carts/:cid', (req, res) => {
+//   // Render the cart view (cartsView.js)
+//   res.sendFile(path.join(__dirname, 'views', 'cartsView.js'));
+// });
 
 
 
 // Error handling middleware
+// Error handling middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack);
+  console.error('Error:', err);  // Log the detailed error message
   res.status(500).json({ error: 'Something went wrong!' });
 });
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 

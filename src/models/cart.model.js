@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
 
+
 const cartCollection = "carts"
 const cartSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
   },
+
   products: [
     {
       productId: {
@@ -21,7 +23,7 @@ const cartSchema = new mongoose.Schema({
       },
     },
   ],
-  // Add any other fields specific to your carts
+ 
 });
 
 // Add pagination plugin to the cart schema
