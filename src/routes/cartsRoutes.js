@@ -64,6 +64,11 @@ router.put('/carts/:cid/products/:pid', async (req, res) => {
     const { cid, pid } = req.params;
     const { quantity } = req.body;
 
+    // Check if the provided cid is a valid ObjectId
+    if (!mongoose.Types.ObjectId.isValid(cid)) {
+      return res.status(400).json({ status: 'error', error: 'Invalid cart ID' });
+    }
+
     // Implement logic to update the quantity of the product with :pid in cart with :cid
     const updatedCart = await Carts.findOneAndUpdate(
       { _id: cid, 'products.productId': pid },
